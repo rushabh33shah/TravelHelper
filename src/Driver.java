@@ -9,17 +9,5 @@ public class Driver {
         HotelData data = new HotelData();
         touristAttraction ta = new touristAttraction();
         ta.fetch_attraction(10323, 2);
-
-        // Load hotel info from hotels200.json
-
-        //===================================DONT RUN LOAD HOTEL OR LOAD REVIEWS
-        //data.loadHotelInfo("input/hotels200.json");
-        //   data.loadReviews(Paths.get("input/reviews"));
-        //==============================================
-
-        // Traverse input/reviews directory recursively,
-        // find all the json files and load reviews
-        //	data.printToFile(Paths.get("outputFile"));
-
     }
 }
