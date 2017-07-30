@@ -1,0 +1,55 @@
+<p><h1>Reviews:</h1></p>
+<table border="1" class="table table-striped" style="background-color:#E6E6E6;">
+    <thead style="font-size:20px;">
+    <tr>
+        <th>
+            <center>USERNAME</center>
+        </th>
+        <th>
+            <center>Hotel</center>
+        </th>
+        <th>
+            <center>TITLE</center>
+        </th>
+        <th>
+            <center>TEXT</center>
+        </th>
+        <th>
+            <center>DATE</center>
+        </th>
+        <th>
+            <center>RATING</center>
+        </th>
+        <th>
+            <center>RECOMMEND?</center>
+        </th>
+
+    </tr>
+    </thead>
+    <tbody>
+    #foreach( $keyValue in $map.keySet() )
+    <tr style="margin-bottom:5px;">
+        #set ($loopCount=1)
+        #foreach( $value in $map.get($keyValue) )
+
+        #if($loopCount==8)
+        <td>
+
+            <a href="/userReviewUpdate?review_id=$keyValue&hotel_id=$value">Update Review</a>
+        </td>
+        #else
+        <td>
+            <strong>$value</strong>
+        </td>
+        #end
+        #set($loopCount=$loopCount+1)
+        #end
+        <td>
+
+            <a href="/userReviewUpdate?review_id=$keyValue&delete=yes">DELETE</a>
+
+        </td>
+    </tr>
+    #end
+    </tbody>
+</table>

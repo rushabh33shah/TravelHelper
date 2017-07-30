@@ -1,0 +1,32 @@
+<form action="/hotels" method="GET" style="width:30%">
+    <div class="form-group">
+        <div class="col-md-4">
+
+            <label>Select City</label>
+            <select name="city" class="form-control">
+                <option></option>
+                #foreach( $city in $citylist )
+                <option>$city</option>
+
+                #end
+            </select>
+        </div>
+        <div class="col-md-4">
+
+            <label>Select State</label>
+            <select name="state" class="form-control">
+                <option></option>
+
+                #foreach( $state in $statelist )
+                <option>$state</option>
+                #end
+            </select>
+        </div>
+
+        <div class="col-md-4" style="margin-top:22px;">
+            <label></label>
+            <input type="hidden" name="startq" value="0">
+            <button type="submit" class="btn btn-primary">View</button>
+        </div>
+    </div>
+</form>

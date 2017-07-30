@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-md-8">
+        <p>
+
+            <a href="/reviews?hotel_id=$hotel_id	"/>
+        <h3> $hotel_name </h3>
+        </a>
+        </p>
+        #set ($urlPart= ".Hotel-Information")
+
+        <a href="/expedia?expedia_hotel=$hotel_id">Click For More Info !</a>
+
+        <p>$address </p>
+
+    </div>
+    <div class="col-md-4">
+        <form action="/touristattraction" method="post" autocomplete="on">
+
+            <h3>Tourist Attractions</h3>
+            Miles:<input type="text" name="radius" value="2" size="3">
+            <input type="hidden" name="hotel_id" value="$hotel_id">
+            <br/><br/><input type="submit" class="btn btn-primary" value="Tourist Attractions">
+        </form>
+
+    </div>
+</div>

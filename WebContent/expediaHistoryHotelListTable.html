@@ -1,0 +1,34 @@
+ 	<table border="1" class="table table-striped" style="font-size:30px;background-color:#E6E6E6;">		
+	 <thead>
+      <tr>
+      <!--
+        <th><center>Search Result</center></th>
+      -->  
+      </tr>
+    </thead>
+	<tbody>
+	#if($map.size()<1)
+	<tr><td><h1>No Results Found !</h1></td></tr>
+	#else	
+	
+       #foreach( $keyValue in $map.keySet() )
+     	<tr style="margin-bottom:5px;">
+   
+      	   #foreach( $value in $map.get($keyValue) )
+    
+        <td style="font-size:30px;">
+        <a href=/reviews?hotel_id=$keyValue />
+       	  <strong>$value </strong>
+   		 </a>
+       	</td>
+		 #end
+	  </tr>
+		 #end		 
+    #end
+     </tbody>
+   </table>
+    <form action = "/expedia" method="POST" class="btn btn-default" >
+	 	<input type="hidden" name="$user_id" value="$user_id">
+	 	<input type="hidden" name="delete" value="yes">
+	  <button type="submit" class="btn btn-link">Clear History</button>
+	 </form>

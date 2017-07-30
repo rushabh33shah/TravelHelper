@@ -1,0 +1,21 @@
+<div class="btn-group" role="group" aria-label="..." style="float:right">
+
+    <form action="/saveHotel" method="POST" class="btn btn-default" style="float:LEFT">
+        <input type="hidden" name="hotel_id" value=$hotel_id>
+
+        <button type="submit" class="btn btn-default"> Save Hotel</button>
+    </form>
+
+    <form action="/reviews" method="POST" class="btn btn-default" style="float:right">
+        <input type="hidden" name="sort" value="date">
+        <input type="hidden" name="hotel_id" value=$hotel_id>
+
+        <button type="submit" class="btn btn-default"> Sort By Date</button>
+    </form>
+
+    <form action="/reviews" method="POST" class="btn btn-default" style="float:right">
+        <input type="hidden" name="sort" value="rating">
+        <input type="hidden" name="hotel_id" value=$hotel_id>
+        <button type="submit" class="btn btn-default">Sort By Rating</button>
+    </form>
+</div>

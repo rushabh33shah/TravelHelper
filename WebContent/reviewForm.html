@@ -1,0 +1,60 @@
+<link class="cssdeck" rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css"
+      class="cssdeck">
+<div class="" id="loginModal">
+    <div class="modal-header">
+        <h3>Enter Review </h3>
+    </div>
+    <div class="well">
+        <script>
+
+		function validateReviews()
+		{var reviewTitle = document.forms["review_form"]["reviewTitle"].value;
+		var reviewText = document.forms["review_form"]["reviewText"].value;
+		
+		var titlelength = reviewTitle.trim().length;  
+		var textlength = reviewText.trim().length;  
+		
+		if (titlelength == 0 ) {
+		 alert("Title should not be empty ");
+		 return false;}
+		if (textlength == 0  ) {
+		alert("Text should not be empty ");
+		return false;}
+		}
+
+        </script>
+
+        <form name="review_form" onsubmit="return validateReviews()" action="/insertUserReview" method="post">
+            <table>
+                <label>Title</label>
+                <input type="text" name="reviewTitle" value="" class="input-xlarge">
+                <label>Review</label>
+                <textarea name="reviewText" value="" rows="3" class="input-xlarge">
+						</textarea>
+
+                <label>Rating:</label>
+                <input type="radio" name="overAllRating" value="0"> 0
+                <input type="radio" name="overAllRating" value="1"> 1
+                <input type="radio" name="overAllRating" value="2"> 2
+                <input type="radio" name="overAllRating" value="3"> 3
+                <input type="radio" name="overAllRating" value="4"> 4
+                <input type="radio" name="overAllRating" value="5" checked> 5
+
+                <label>Is Recommended ?</label>
+                <input type="radio" name="isrecom" value="YES"> YES
+                <input type="radio" name="isrecom" value="NO"> NO
+
+                <input type="hidden" name="date" value="$date">
+                <input type="hidden" name="hotelId" value="$hotelId">
+
+                <div>
+                    <button class="btn btn-primary">ADD REVIEW</button>
+                </div>
+            </table>
+        </form>
+
+    </div>
+</div>
+			

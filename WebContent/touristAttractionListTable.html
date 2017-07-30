@@ -1,0 +1,30 @@
+<center><h1>Attractions Near Your Hotel</h1></center>
+<table border="1" class="table table-striped" style="font-size:30px;background-color:#E6E6E6;">
+    <thead>
+    <tr>
+        <th>
+            <center>Attraction</center>
+        </th>
+        <th>
+            <center>Address</center>
+        </th>
+
+    </tr>
+    </thead>
+    <tbody>
+    #foreach( $keyValue in $map.keySet() )
+    <tr style="margin-bottom:5px;">
+
+        #foreach( $value in $map.get($keyValue) )
+
+        <td style="font-size:30px;">
+            <a style="font-color:337AB7"/>
+            <strong>$value </strong>
+            </a>
+        </td>
+        #end
+    </tr>
+    #end
+
+    </tbody>
+</table>

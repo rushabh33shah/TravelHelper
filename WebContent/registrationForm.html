@@ -1,0 +1,64 @@
+<script>
+		
+		function validateForm()
+		{
+		
+			var username = document.forms["registration_form"]["user"].value;
+			var password = document.forms["registration_form"]["pass"].value;
+				
+			var ulength = username.trim().length; 
+			var passlength = password.trim().length;  
+				
+			if (ulength == 0 || ulength < 3 )
+			{
+				 alert("Username should not be empty / length more than 3");
+				 return false;
+			 }
+			if (passlength == 0 || passlength < 3 )
+			{
+				 alert("password should not be empty / length more than 3");
+				 return false;
+			 }
+		}
+
+</script>
+
+<div class="" id="loginModal">
+    <div class="modal-header">
+        <h3>Have an Account?<a href=/login>Login Here</a></h3>
+    </div>
+    <div class="well">
+
+        <form name="registration_form" onsubmit="return validateForm()" action="/register" method="post">
+            <table>
+                <label>Username</label>
+                <input type="text" name="user" value="" class="input-xlarge">
+                <label>First Name</label>
+                <input type="text" name="firstname" value="" class="input-xlarge">
+                <label>Last Name</label>
+                <input type="text" name="lastname" value="" class="input-xlarge">
+                <label>Email</label>
+                <input type="text" name="email" value="" class="input-xlarge">
+                <label>Mobile No.</label>
+                <input type="text" name="mobile" value="" class="input-xlarge">
+
+                <label>Address</label>
+                <textarea name="streetAddress" value="" rows="3" class="input-xlarge">
+						</textarea>
+                <label>City</label>
+                <input type="text" name="city" value="" class="input-xlarge">
+                <label>State</label>
+                <input type="text" name="state" value="" class="input-xlarge">
+                <label>Country</label>
+                <input type="text" name="country" value="" class="input-xlarge">
+                <label>Create Password</label>
+                <input type="password" name="pass" value="" class="input-xlarge">
+
+                <div>
+                    <button class="btn btn-primary">Create Account</button>
+                </div>
+        </form>
+        </table>
+    </div>
+</div>
+			
